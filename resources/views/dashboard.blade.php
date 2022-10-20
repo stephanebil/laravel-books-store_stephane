@@ -1,17 +1,11 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    You're logged in!
-                </div>
-            </div>
+<x-layouts.main-layout title="Bienvenue sur le Dashboard" >
+    <div class="py-12 px-20">
+        <h1 class="text-center font-bold text-green-700 text-2xl">Hi, {{ Auth::user()->name }}</h1>
+		<div class="py-20">
+            <a href="{{ route('books.create') }}" class="bg-green-700 p-3 rounded text-white">Ajouter un livre</a> 
+        </div>	
+        <div class="py-20">
         </div>
-    </div>
-</x-app-layout>
+			<a href="/" class="bg-green-700 p-3 rounded text-white">Modifier un livre</a>           
+        </div>
+</x-layouts.main-layout>
